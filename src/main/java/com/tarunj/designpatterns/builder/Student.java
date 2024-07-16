@@ -12,8 +12,10 @@ public class Student {
     private String batch;
     private double marks;
 
+    // Copy Constructor (copy inner class object to main class)
     private Student(StudentHelper studentHelper) throws Exception {
 
+        // make necessary validations in constructor
         if(studentHelper.age > 60 || studentHelper.age < 18) {
             throw new Exception("Invalid Age");
         }
@@ -25,6 +27,7 @@ public class Student {
     }
 
     public static StudentHelper builder() {
+        // builder to hide Inner Class
         return new StudentHelper();
     }
 
@@ -35,11 +38,11 @@ public class Student {
         private String batch;
         private double marks;
 
+        // Return Object after setting the variable
         public StudentHelper setAge(int age) {
             this.age = age;
             return this;
         }
-
 
         public StudentHelper setName(String name) {
             this.name = name;
@@ -56,7 +59,7 @@ public class Student {
             return this;
         }
 
-
+        // Copy Constructor to Build the Main Object
         public Student build() throws Exception {
             return new Student(this);
         }
