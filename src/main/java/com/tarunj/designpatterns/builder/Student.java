@@ -2,9 +2,11 @@ package com.tarunj.designpatterns.builder;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class Student {
 
     private int age;
