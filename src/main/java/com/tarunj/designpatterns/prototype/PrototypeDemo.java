@@ -7,6 +7,8 @@ public class PrototypeDemo {
 
     public static void main(String[] args) {
 
+        // Build shapes
+
         List<Shape> shapes = getShapes();
         List<Shape> shapesCopy = shapes.stream().map(Shape::clone).toList();
 
